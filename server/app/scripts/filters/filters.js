@@ -40,7 +40,7 @@
   function shortHash() {
     return function(sha) {
       if (sha === undefined) { return ""; }
-      return sha.substr(0,10);
+      return sha.substr(0,7);
     }
   }
 
