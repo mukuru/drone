@@ -4,7 +4,7 @@ angular.module('app').controller("RepoController", function($scope, $filter, $ht
 	$scope.repo = repo;
 	$scope.activating = false;
 	$scope.build_filter = 'build_history';
-	$scope.layout = 'grid';
+	$scope.layout = 'row';
 
 	// subscribes to the global feed to receive
 	// build status updates.
@@ -25,8 +25,8 @@ angular.module('app').controller("RepoController", function($scope, $filter, $ht
 
 			// Add a build message if the SHA couldn't be found and the new build status is 'Started'
 			if ( ! sha_updated && item.commit.status == 'Started') {
-				// $scope.commits.unshift(item.commit);
-				$scope.msg = item;
+				$scope.commits.unshift(item.commit);
+				//$scope.msg = item;
 			}
 
 			$scope.$apply();
